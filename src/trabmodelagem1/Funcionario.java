@@ -14,6 +14,9 @@ public class Funcionario extends Pessoa{
     private String senha;
     
     Funcionario(String nome, String cpf)
+    {
+        
+    }
     private boolean fazerLogin()
     {
         return false;

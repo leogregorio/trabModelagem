@@ -9,13 +9,6 @@ package trabmodelagem1;
  *
  * @author Leonardo Gregório
  */
-public class Administrador extends Atendente {
-
-    public Administrador(String nome, String cpf) {
-        super(nome, cpf);
-    }
-    private void cadastrarFuncionario()
-    {
-        
-    }
+public class usuarioAdm {
+    
 }

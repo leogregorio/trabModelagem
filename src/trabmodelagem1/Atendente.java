@@ -11,27 +11,31 @@ package trabmodelagem1;
  */
 public class Atendente extends Funcionario{
 
-    private void cadastrarPaciente(String nome, String cpf, int nivelDeUrgencia,String planoDeSaude)
+    public Atendente(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    public static void cadastrarPaciente(String nome, String cpf, int nivelDeUrgencia,String planoDeSaude)
     {
         Paciente novo = new Paciente(nome,cpf,nivelDeUrgencia,planoDeSaude);
     }
-    private void cadastrarVisitante(String nome, String cpf, Paciente paciente)
+    public static void cadastrarVisitante(String nome, String cpf, Paciente paciente)
     {
         Visitante novo = new Visitante(nome,cpf,paciente);
     }
-    private void consultarQuarto()
+    public static void consultarQuarto()
     {
         
     }
-    private void reservarQuarto()
+    public static void reservarQuarto()
     {
         
     }
-    private void consultarAgendaMedico()
+    public static void consultarAgendaMedico()
     {
         
     }
-    private void consultarAgendaQuarto()
+    public static void consultarAgendaQuarto()
     {
         
     }

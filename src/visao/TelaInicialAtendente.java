@@ -38,6 +38,8 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButtonSair = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastros = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -128,6 +130,20 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(50, 20, 80, 15);
 
+        jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
+        jButtonSair.setText("jButton6");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSair);
+        jButtonSair.setBounds(600, 10, 50, 40);
+
+        jLabel6.setText("Sair");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(610, 50, 34, 15);
+
         jMenuCadastros.setText("Cadastros");
 
         jMenuItem2.setText("Pacientes");
@@ -184,7 +200,8 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        TelaCadastroPaciente telacp = new TelaCadastroPaciente();
+        telacp.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -198,6 +215,12 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        this.dispose();
+        TelaLogin tela = new TelaLogin();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,11 +263,13 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

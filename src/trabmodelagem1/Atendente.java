@@ -24,6 +24,22 @@ public class Atendente extends Funcionario{
         for(int i=0; i < Main.listaPacientes.size(); i++)
             System.out.println(Arrays.toString(Main.listaPacientes.toArray()));
     }
+    public static Paciente pesquisarPaciente(String cpf)
+    {
+        for(int i=0; i<Main.listaPacientes.size(); i++)
+        {
+            if(Main.listaPacientes.get(i).getCpf().equals(cpf))
+                return Main.listaPacientes.get(i);
+        }
+        return null;
+    }
+    
+    
+    
+    
+    
+    
+    
     public static void cadastrarVisitante(String nome, String cpf, String paciente)
     {
         Visitante novo = new Visitante(nome,cpf,paciente);

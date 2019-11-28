@@ -106,25 +106,29 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
+
+        if(CampoUsuario.getText().equals("")){
+            if(opcoesUser.getSelectedItem().toString().equals("Atendente"))
+              {
+                 TelaInicialAtendente tela = new TelaInicialAtendente();
+                 tela.setVisible(true);
+                 this.dispose();
+             }
+            else if(opcoesUser.getSelectedItem().toString().equals("Administrador"))
+            {
+                TelaInicialAdmin tela = new TelaInicialAdmin();
+                tela.setVisible(true);
+                this.dispose();
+            }
+        }
         
-        if(opcoesUser.getSelectedItem().toString().equals("Atendente"))
-        {
-            TelaInicialAtendente tela = new TelaInicialAtendente();
-            tela.setVisible(true);
-        }
-        else if(opcoesUser.getSelectedItem().toString().equals("Administrador"))
-        {
-            TelaInicialAdmin tela = new TelaInicialAdmin();
-            tela.setVisible(true);
-        }
-        else
-            return;
+       
 
         
     }//GEN-LAST:event_jButtonAcessarActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        ;
+          this.dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void CampoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoUsuarioActionPerformed

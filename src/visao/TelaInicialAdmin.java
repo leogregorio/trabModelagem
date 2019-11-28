@@ -36,6 +36,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -72,7 +73,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(30, 120, 230, 80);
+        jButton2.setBounds(30, 140, 230, 80);
 
         jLabel2.setText("Quartos");
         jPanel2.add(jLabel2);
@@ -86,7 +87,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton3);
-        jButton3.setBounds(270, 20, 230, 80);
+        jButton3.setBounds(270, 40, 230, 80);
 
         jLabel3.setText("Consultas Médicas");
         jPanel2.add(jLabel3);
@@ -120,7 +121,11 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton6);
-        jButton6.setBounds(30, 20, 230, 80);
+        jButton6.setBounds(30, 40, 230, 80);
+
+        jLabel1.setText("Cadastros");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(30, 20, 60, 15);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(20, 60, 620, 480);
@@ -252,6 +257,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

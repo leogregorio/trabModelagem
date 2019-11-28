@@ -163,7 +163,8 @@ public class TelaCadastroPaciente extends javax.swing.JFrame {
        int nivelDeUrgencia = Integer.parseInt(jComboBox1.getSelectedItem().toString());  
        
        Atendente.cadastrarPaciente(nome, cpf, nivelDeUrgencia , plano);
-       
+       TelaPaciente tela = new TelaPaciente();
+       tela.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 

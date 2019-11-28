@@ -67,7 +67,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jButton1.setBounds(270, 170, 230, 80);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton2.setText("Cadastro de Pacientes");
+        jButton2.setText("Paciente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -200,7 +200,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaCadastroPaciente telacp = new TelaCadastroPaciente();
+        TelaPaciente telacp = new TelaPaciente();
         telacp.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

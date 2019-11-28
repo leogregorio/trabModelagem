@@ -116,8 +116,8 @@ public class TelaLogin extends javax.swing.JFrame {
              }
             else if(opcoesUser.getSelectedItem().toString().equals("Administrador"))
             {
-                TelaInicialAdmin tela = new TelaInicialAdmin();
-                tela.setVisible(true);
+               // TelaInicialAdmin tela = new TelaInicialAdmin();
+                //tela.setVisible(true);
                 this.dispose();
             }
         }

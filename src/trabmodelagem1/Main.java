@@ -5,6 +5,7 @@
  */
 package trabmodelagem1;
 
+import java.util.ArrayList;
 import visao.TelaLogin;
 
 /**
@@ -12,7 +13,37 @@ import visao.TelaLogin;
  * @author Leonardo Gregório
  */
 public class Main {
+    private static Main hospital = new Main();
+    
+    public static ArrayList<Paciente> listaPacientes;
+    public static ArrayList<Enfermeiro> listaEnfermeiros;
+    public static ArrayList<Medico> listaMedicos;
+    public static ArrayList<Atendente> listaAtendentes;
+    public static ArrayList<Visitante> listaVisitantes;
+    
+    private Main()
+    {
+        this.listaPacientes = new ArrayList();
+        this.listaEnfermeiros = new ArrayList();
+        this.listaMedicos = new ArrayList();
+        this.listaPacientes = new ArrayList();
+        this.listaPacientes = new ArrayList();
+    }
 
+    public static Main getInstance()
+    {
+        return hospital;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */

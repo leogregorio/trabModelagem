@@ -37,4 +37,8 @@ public class Paciente extends Pessoa{
         this.planoDeSaude = planoDeSaude;
     }
     
+    public String toString()
+    {
+        return this.nome;
+    }
 }

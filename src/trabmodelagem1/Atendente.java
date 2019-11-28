@@ -5,6 +5,8 @@
  */
 package trabmodelagem1;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Leonardo Gregório
@@ -18,8 +20,11 @@ public class Atendente extends Funcionario{
     public static void cadastrarPaciente(String nome, String cpf, int nivelDeUrgencia,String planoDeSaude)
     {
         Paciente novo = new Paciente(nome,cpf,nivelDeUrgencia,planoDeSaude);
+        Main.listaPacientes.add(novo);
+        for(int i=0; i < Main.listaPacientes.size(); i++)
+            System.out.println(Arrays.toString(Main.listaPacientes.toArray()));
     }
-    public static void cadastrarVisitante(String nome, String cpf, Paciente paciente)
+    public static void cadastrarVisitante(String nome, String cpf, String paciente)
     {
         Visitante novo = new Visitante(nome,cpf,paciente);
     }
@@ -39,5 +44,7 @@ public class Atendente extends Funcionario{
     {
         
     }
-            
+
+
+
 }

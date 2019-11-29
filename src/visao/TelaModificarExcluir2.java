@@ -124,6 +124,7 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
             Atendente.deletarPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
             //atualizar lista
             jComboBoxUsuarios.removeAllItems();
+            
             String[] m = new String[Main.listaPacientes.size()];
             for(int i = 0; i< Main.listaPacientes.size();i++)
                  m[i] = Main.listaPacientes.get(i).toString();

@@ -5,6 +5,7 @@
  */
 package visao;
 
+import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
 
 /**
@@ -29,29 +30,42 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jComboBoxUsuarios = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButtonMod = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButton1.setText("Modificar Paciente");
+        String[] m = new String[Main.listaPacientes.size()];
+        for(int i = 0; i< Main.listaPacientes.size();i++)
+        m[i] = Main.listaPacientes.get(i).toString();
 
+        for(String str: m)
+        {
+            jComboBoxUsuarios.addItem(str);
+        }
+
+        buttonGroup1.add(jRadioButtonMod);
+        jRadioButtonMod.setSelected(true);
+        jRadioButtonMod.setText("Modificar Paciente");
+
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Excluir Paciente");
-
-        jButton1.setText("BOTA");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Continuar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -64,18 +78,16 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addGap(82, 82, 82)
-                                .addComponent(jRadioButton2))
+                            .addComponent(jRadioButtonMod)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jComboBoxUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)
-                                .addComponent(jButton1))))
+                                .addGap(27, 27, 27)
+                                .addComponent(jButton3))
+                            .addComponent(jRadioButton2)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton2)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,35 +95,46 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton2)
                 .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(58, 58, 58)
+                .addComponent(jRadioButtonMod)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton2)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(214, Short.MAX_VALUE))
+                    .addComponent(jButton3))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          String[] m = new String[Main.listaPacientes.size()];
-        for(int i = 0; i< Main.listaPacientes.size();i++)
-            m[i] = Main.listaPacientes.get(i).toString();
-  
-        for(String str: m)
-        {
-            jComboBoxUsuarios.addItem(str);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        TelaPaciente tela = new TelaPaciente();
        tela.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    
+        if(jRadioButtonMod.isSelected())
+            System.out.println("MODIFICAR");
+        else
+        {
+            System.out.println("EXCLUIR");
+            Atendente.deletarPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
+            //atualizar lista
+            jComboBoxUsuarios.removeAllItems();
+            String[] m = new String[Main.listaPacientes.size()];
+            for(int i = 0; i< Main.listaPacientes.size();i++)
+                 m[i] = Main.listaPacientes.get(i).toString();
+  
+            for(String str: m)
+            {
+               jComboBoxUsuarios.addItem(str);
+            }
+        }
+            
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,10 +172,11 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBoxUsuarios;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButtonMod;
     // End of variables declaration//GEN-END:variables
 }

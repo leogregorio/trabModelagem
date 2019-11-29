@@ -34,6 +34,15 @@ public class Atendente extends Funcionario{
         return null;
     }
     
+    public static Paciente pesquisarPacienteNome(String nome)
+    {
+        for(int i=0; i<Main.listaPacientes.size(); i++)
+        {
+            if(Main.listaPacientes.get(i).getNome().equals(nome))
+                return Main.listaPacientes.get(i);
+        }
+        return null;
+    }
     
     
     
@@ -61,6 +70,10 @@ public class Atendente extends Funcionario{
         
     }
 
-
+    public static void deletarPaciente(Paciente paciente)
+    {
+        Main.listaPacientes.remove(paciente);
+        paciente = null;
+    }
 
 }

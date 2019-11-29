@@ -85,7 +85,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jLabel2.setBounds(30, 150, 60, 15);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton3.setText("Cadastro de Visitantes");
+        jButton3.setText("Visitantes");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

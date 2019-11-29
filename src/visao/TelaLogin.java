@@ -111,6 +111,7 @@ public class TelaLogin extends javax.swing.JFrame {
             if(opcoesUser.getSelectedItem().toString().equals("Atendente"))
               {
                  TelaInicialAtendente tela = new TelaInicialAtendente();
+                 //TelaModificarExcluir2 tela = new TelaModificarExcluir2();
                  tela.setVisible(true);
                  this.dispose();
              }

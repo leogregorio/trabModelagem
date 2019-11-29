@@ -7,6 +7,7 @@ package trabmodelagem1;
 
 import java.util.ArrayList;
 import visao.TelaLogin;
+import trabmodelagem1.Atendente;
 
 /**
  *
@@ -14,6 +15,9 @@ import visao.TelaLogin;
  */
 public class Main {
     private static Main hospital = new Main();
+    
+    
+    
     
     public static ArrayList<Paciente> listaPacientes;
     public static ArrayList<Enfermeiro> listaEnfermeiros;
@@ -38,15 +42,7 @@ public class Main {
     
     
     
-    
-    
-    
-    
-    
-    
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -54,6 +50,10 @@ public class Main {
                 tela.setVisible(true);
             }
         });
+        
+        Atendente.cadastrarPaciente("Vulia Jaladares", "42069", 0, "Caixa");
+        Atendente.cadastrarPaciente("Greo Legorio", "666", 0, "GEAP");
+        Atendente.cadastrarPaciente("Rafa Ela", "9090", 0, "SUS");
     }
     
 }

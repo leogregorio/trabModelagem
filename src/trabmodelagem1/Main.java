@@ -51,9 +51,9 @@ public class Main {
             }
         });
         
-        Atendente.cadastrarPaciente("Vulia Jaladares", "42069", 0, "Caixa");
-        Atendente.cadastrarPaciente("Greo Legorio", "666", 0, "GEAP");
-        Atendente.cadastrarPaciente("Rafa Ela", "9090", 0, "SUS");
+        Atendente.cadastrarPaciente("Vulia Jaladares", "42069", 1, "Caixa");
+        Atendente.cadastrarPaciente("Greo Legorio", "666", 4, "GEAP");
+        Atendente.cadastrarPaciente("Rafa Ela", "9090", 1, "SUS");
     }
     
 }

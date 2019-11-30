@@ -9,12 +9,12 @@ package visao;
  *
  * @author Leonardo Gregório
  */
-public class TelaInicialAtendente extends javax.swing.JFrame {
+public class TelaInicialAdministrador extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaInicialAtendente
      */
-    public TelaInicialAtendente() {
+    public TelaInicialAdministrador() {
         initComponents();
     }
 
@@ -36,6 +36,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
@@ -64,25 +65,25 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(270, 170, 230, 80);
+        jButton1.setBounds(270, 230, 230, 80);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton2.setText("Paciente");
+        jButton2.setText("Funcionários");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(30, 30, 230, 80);
+        jButton2.setBounds(30, 110, 230, 80);
 
         jLabel1.setText("Cadastros");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(30, 10, 130, 15);
+        jLabel1.setBounds(30, 0, 130, 15);
 
         jLabel2.setText("Quartos");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(30, 150, 60, 15);
+        jLabel2.setBounds(30, 210, 60, 15);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton3.setText("Visitantes");
@@ -92,11 +93,11 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton3);
-        jButton3.setBounds(270, 30, 230, 80);
+        jButton3.setBounds(270, 20, 230, 80);
 
         jLabel3.setText("Consultas Médicas");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(30, 290, 110, 15);
+        jLabel3.setBounds(30, 350, 110, 15);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton4.setText("Consultar Quartos");
@@ -106,7 +107,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton4);
-        jButton4.setBounds(30, 170, 230, 80);
+        jButton4.setBounds(30, 230, 230, 80);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton5.setText("Agendar Consulta");
@@ -116,19 +117,29 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton5);
-        jButton5.setBounds(30, 320, 230, 80);
+        jButton5.setBounds(30, 380, 230, 80);
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
+        jButton6.setText("Paciente");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(30, 20, 230, 80);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(20, 100, 620, 440);
+        jPanel2.setBounds(20, 100, 560, 470);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel4.setText("TELA PRINCIPAL");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 25, 410, 40);
+        jLabel4.setBounds(50, 30, 410, 40);
 
-        jLabel5.setText("ATENDENTE");
+        jLabel5.setText("ADMINISTRADOR");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(50, 20, 80, 15);
+        jLabel5.setBounds(50, 20, 130, 15);
 
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
         jButtonSair.setText("jButton6");
@@ -205,8 +216,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        TelaVisitante telavis = new TelaVisitante();
-        telavis.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -222,6 +232,10 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         TelaLogin tela = new TelaLogin();
         tela.setVisible(true);
     }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,20 +254,21 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAtendente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAtendente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAtendente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAtendente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicialAtendente().setVisible(true);
+                new TelaInicialAdministrador().setVisible(true);
             }
         });
     }
@@ -264,6 +279,7 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

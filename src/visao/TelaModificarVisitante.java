@@ -8,17 +8,19 @@ package visao;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
 import trabmodelagem1.Paciente;
+import trabmodelagem1.Visitante;
 
 /**
  *
  * @author Leonardo Gregório
  */
-public class TelaCadastroVisitante extends javax.swing.JFrame {
-
+    public class TelaModificarVisitante extends javax.swing.JFrame {
+    private final Visitante visitante;
     /**
      * Creates new form TelaCadastroPaciente
      */
-    public TelaCadastroVisitante() {
+    public TelaModificarVisitante(Visitante visitante) {
+        this.visitante = visitante;
         initComponents();
     }
 
@@ -41,8 +43,18 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jComboBoxUsuarios = new javax.swing.JComboBox<>();
+        BOTA = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTextFieldCPF.setText(this.visitante.getCpf());
+        jTextFieldCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCPFActionPerformed(evt);
+            }
+        });
+
+        jTextFieldNome.setText(this.visitante.getNome());
 
         jLabelNome.setText("Nome Completo");
 
@@ -65,13 +77,13 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setText("CADASTRO DE VISITANTES");
+        jLabel1.setText("MODIFICAR VISITANTE");
 
-        String[] m = new String[Main.listaPacientes.size()];
+        String[] n = new String[Main.listaPacientes.size()];
         for(int i = 0; i< Main.listaPacientes.size();i++)
-        m[i] = Main.listaPacientes.get(i).toString();
+        n[i] = Main.listaPacientes.get(i).toString();
 
-        for(String str: m)
+        for(String str: n)
         {
             jComboBoxUsuarios.addItem(str);
         }
@@ -91,7 +103,7 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelCPF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                            .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,7 +115,7 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
                         .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -134,35 +146,44 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
                 .addGap(63, 63, 63))
         );
 
+        BOTA.setText("BOTA");
+        BOTA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOTAActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(BOTA)
+                .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(BOTA, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
+                .addContainerGap(127, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+                .addGap(91, 91, 91))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-       String nome = jTextFieldNome.getText();
-       String cpf = jTextFieldCPF.getText();
-       Paciente paciente = Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString());
-       
-       
-       Atendente.cadastrarVisitante(nome, cpf , paciente);
-       TelaVisitante tela = new TelaVisitante();
-       tela.setVisible(true);
+
+       this.visitante.setNome(jTextFieldNome.getText());
+       this.visitante.setCpf(jTextFieldCPF.getText());
+       this.visitante.setPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
        this.dispose();
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -171,9 +192,20 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
+    private void BOTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAActionPerformed
+        jTextFieldNome.setText(this.visitante.getNome());
+        jTextFieldCPF.setText(this.visitante.getCpf());
+        
+      
+    }//GEN-LAST:event_BOTAActionPerformed
+
     private void jComboBoxUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUsuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxUsuariosActionPerformed
+
+    private void jTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCPFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,26 +224,29 @@ public class TelaCadastroVisitante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastroVisitante().setVisible(true);
+               // new TelaModificarPaciente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BOTA;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonVoltar;
     private javax.swing.JComboBox<String> jComboBoxUsuarios;

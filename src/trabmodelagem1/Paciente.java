@@ -10,6 +10,10 @@ package trabmodelagem1;
  * @author Leonardo Gregório
  */
 public class Paciente extends Pessoa{
+
+    public void setNivelDeUrgencia(int nivelDeUrgencia) {
+        this.nivelDeUrgencia = nivelDeUrgencia;
+    }
     private int nivelDeUrgencia;
     private String planoDeSaude;
 
@@ -26,7 +30,7 @@ public class Paciente extends Pessoa{
     }
 
     public void setStatus(String status) {
-        this.nivelDeUrgencia = nivelDeUrgencia;
+        this.setNivelDeUrgencia(getNivelDeUrgencia());
     }
 
     public String getPlanoDeSaude() {

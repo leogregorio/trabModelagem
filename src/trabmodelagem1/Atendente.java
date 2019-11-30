@@ -17,6 +17,9 @@ public class Atendente extends Funcionario{
         super(nome, cpf);
     }
 
+    
+    
+    
     public static void cadastrarPaciente(String nome, String cpf, int nivelDeUrgencia,String planoDeSaude)
     {
         Paciente novo = new Paciente(nome,cpf,nivelDeUrgencia,planoDeSaude);
@@ -33,7 +36,6 @@ public class Atendente extends Funcionario{
         }
         return null;
     }
-    
     public static Paciente pesquisarPacienteNome(String nome)
     {
         for(int i=0; i<Main.listaPacientes.size(); i++)
@@ -43,16 +45,43 @@ public class Atendente extends Funcionario{
         }
         return null;
     }
+    public static void deletarPaciente(Paciente paciente)
+    {
+        Main.listaPacientes.remove(paciente);
+        paciente = null;
+    }
     
     
     
     
     
     
-    public static void cadastrarVisitante(String nome, String cpf, String paciente)
+    public static void cadastrarVisitante(String nome, String cpf, Paciente paciente)
     {
         Visitante novo = new Visitante(nome,cpf,paciente);
+        
+        //Main.listaVisitantes.add(novo);
+        
+        //for(int i=0; i < Main.listaVisitantes.size(); i++)
+        //    System.out.println(Arrays.toString(Main.listaVisitantes.toArray()));
     }
+    public static Visitante pesquisarVisitanteNome(String nome)
+    {
+        for(int i=0; i<Main.listaVisitantes.size(); i++)
+        {
+            if(Main.listaVisitantes.get(i).getNome().equals(nome))
+                return Main.listaVisitantes.get(i);
+        }
+        return null;
+    }
+    public static void deletarVisitante(Visitante visitante)
+    {
+        Main.listaVisitantes.remove(visitante);
+        visitante = null;
+    }
+    
+    
+    
     public static void consultarQuarto()
     {
         
@@ -70,10 +99,6 @@ public class Atendente extends Funcionario{
         
     }
 
-    public static void deletarPaciente(Paciente paciente)
-    {
-        Main.listaPacientes.remove(paciente);
-        paciente = null;
-    }
+
 
 }

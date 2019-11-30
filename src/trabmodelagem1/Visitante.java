@@ -10,20 +10,20 @@ package trabmodelagem1;
  * @author Leonardo Gregório
  */
 public class Visitante extends Pessoa{
-    private String paciente;
+    private Paciente paciente;
 
-    Visitante(String nome, String cpf, String paciente) {
+    Visitante(String nome, String cpf, Paciente paciente) {
         this.nome = nome;
         this.cpf = cpf;
         this.paciente = paciente;
     }
 
 
-    public String getPaciente() {
+    public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(String paciente) {
+    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 }

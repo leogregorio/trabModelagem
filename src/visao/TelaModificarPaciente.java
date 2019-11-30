@@ -47,6 +47,7 @@ import trabmodelagem1.Paciente;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextFieldCPF.setText(this.paciente.getCpf());
         jTextFieldCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCPFActionPerformed(evt);
@@ -210,7 +211,7 @@ import trabmodelagem1.Paciente;
     private void BOTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAActionPerformed
         jTextFieldNome.setText(this.paciente.getNome());
         jTextFieldCPF.setText(this.paciente.getCpf());
-        jComboBoxPlano.setSelectedIndex(this.paciente.getNivelDeUrgencia());
+        
       
     }//GEN-LAST:event_BOTAActionPerformed
 

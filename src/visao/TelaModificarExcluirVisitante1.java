@@ -8,17 +8,18 @@ package visao;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
 import trabmodelagem1.Paciente;
+import trabmodelagem1.Visitante;
 
 /**
  *
  * @author Leonardo Gregório
  */
-public class TelaModificarExcluir2 extends javax.swing.JFrame {
+public class TelaModificarExcluirVisitante1 extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaModificarExcluir2
      */
-    public TelaModificarExcluir2() {
+    public TelaModificarExcluirVisitante1() {
         initComponents();
     }
 
@@ -40,9 +41,9 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        String[] n = new String[Main.listaPacientes.size()];
-        for(int i = 0; i< Main.listaPacientes.size();i++)
-        n[i] = Main.listaPacientes.get(i).toString();
+        String[] n = new String[Main.listaVisitantes.size()];
+        for(int i = 0; i< Main.listaVisitantes.size();i++)
+        n[i] = Main.listaVisitantes.get(i).toString();
 
         for(String str: n)
         {
@@ -56,10 +57,15 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButtonMod);
         jRadioButtonMod.setSelected(true);
-        jRadioButtonMod.setText("Modificar Paciente");
+        jRadioButtonMod.setText("Modificar Visitante");
+        jRadioButtonMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonModActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Excluir Paciente");
+        jRadioButton2.setText("Excluir Visitante");
 
         jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,36 +127,40 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+    
         if(jRadioButtonMod.isSelected())
         {
             System.out.println("MODIFICAR");
-            Paciente paciente = Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString());
-            TelaModificarPaciente tela = new TelaModificarPaciente(paciente);
+            Visitante visitante = Atendente.pesquisarVisitanteNome(jComboBoxUsuarios.getSelectedItem().toString());
+            TelaModificarVisitante tela = new TelaModificarVisitante(visitante);
             tela.setVisible(true);
-
-        }
+            
+        }  
         else
         {
             System.out.println("EXCLUIR");
-            Atendente.deletarPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
+            Atendente.deletarVisitante(Atendente.pesquisarVisitanteNome(jComboBoxUsuarios.getSelectedItem().toString()));
             //atualizar lista
-            jComboBoxUsuarios.removeAllItems();
-            String[] m = new String[Main.listaPacientes.size()];
-            for(int i = 0; i< Main.listaPacientes.size();i++)
-            m[i] = Main.listaPacientes.get(i).toString();
-
+            jComboBoxUsuarios.removeAllItems();            
+            String[] m = new String[Main.listaVisitantes.size()];
+            for(int i = 0; i< Main.listaVisitantes.size();i++)
+                 m[i] = Main.listaVisitantes.get(i).toString();
+  
             for(String str: m)
             {
-                jComboBoxUsuarios.addItem(str);
+               jComboBoxUsuarios.addItem(str);
             }
         }
-
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jComboBoxUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUsuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxUsuariosActionPerformed
+
+    private void jRadioButtonModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonModActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonModActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,20 +179,23 @@ public class TelaModificarExcluir2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaModificarExcluir2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarExcluirVisitante1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaModificarExcluir2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarExcluirVisitante1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaModificarExcluir2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarExcluirVisitante1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaModificarExcluir2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaModificarExcluirVisitante1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaModificarExcluir2().setVisible(true);
+                new TelaModificarExcluirVisitante1().setVisible(true);
             }
         });
     }

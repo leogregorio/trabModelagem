@@ -9,12 +9,12 @@ package visao;
  *
  * @author Leonardo Gregório
  */
-public class TelaPaciente extends javax.swing.JFrame {
+public class TelaVisitante extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPaciente
      */
-    public TelaPaciente() {
+    public TelaVisitante() {
         initComponents();
     }
 
@@ -42,14 +42,14 @@ public class TelaPaciente extends javax.swing.JFrame {
             }
         });
 
-        jButtonCadastrar.setText("Cadastrar Paciente");
+        jButtonCadastrar.setText("Cadastrar Visitante");
         jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
 
-        jButtonPesquisar.setText("Modificar ou Excluir Paciente");
+        jButtonPesquisar.setText("Modificar ou Excluir Visitante");
         jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarActionPerformed(evt);
@@ -57,7 +57,7 @@ public class TelaPaciente extends javax.swing.JFrame {
         });
 
         jLabelOpcoesdepaciente.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabelOpcoesdepaciente.setText("OPÇÕES DE PACIENTE");
+        jLabelOpcoesdepaciente.setText("OPÇÕES DE VISITANTE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,15 +106,14 @@ public class TelaPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        TelaCadastroPaciente tela = new TelaCadastroPaciente();
+        TelaCadastroVisitante tela = new TelaCadastroVisitante();
         tela.setVisible(true);
         this.dispose();
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-        TelaModificarExcluir2 tela = new TelaModificarExcluir2();
-        System.out.println("AAAAA");
+        TelaModificarExcluirVisitante tela = new TelaModificarExcluirVisitante();
         tela.setVisible(true);
         this.dispose() ;
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
@@ -140,20 +139,21 @@ public class TelaPaciente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaVisitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPaciente().setVisible(true);
+                new TelaVisitante().setVisible(true);
             }
         });
     }

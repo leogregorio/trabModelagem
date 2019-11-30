@@ -80,7 +80,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxUsuariosActionPerformed"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="String[] n = new String[Main.listaPacientes.size()];&#xa;        for(int i = 0; i&lt; Main.listaPacientes.size();i++)&#xa;            n[i] = Main.listaPacientes.get(i).toString();&#xa;  &#xa;        for(String str: n)&#xa;        {&#xa;            jComboBoxUsuarios.addItem(str);&#xa;        }"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="String[] n = new String[Main.listaVisitantes.size()];&#xa;        for(int i = 0; i&lt; Main.listaVisitantes.size();i++)&#xa;            n[i] = Main.listaVisitantes.get(i).toString();&#xa;  &#xa;        for(String str: n)&#xa;        {&#xa;            jComboBoxUsuarios.addItem(str);&#xa;        }"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
@@ -90,15 +90,18 @@
           <ComponentRef name="buttonGroup1"/>
         </Property>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Modificar Paciente"/>
+        <Property name="text" type="java.lang.String" value="Modificar Visitante"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonModActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton2">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Excluir Paciente"/>
+        <Property name="text" type="java.lang.String" value="Excluir Visitante"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">

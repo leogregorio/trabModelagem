@@ -30,8 +30,8 @@ public class Main {
         this.listaPacientes = new ArrayList();
         this.listaEnfermeiros = new ArrayList();
         this.listaMedicos = new ArrayList();
-        this.listaPacientes = new ArrayList();
-        this.listaPacientes = new ArrayList();
+        this.listaVisitantes = new ArrayList();
+        this.listaAtendentes = new ArrayList();
     }
 
     public static Main getInstance()

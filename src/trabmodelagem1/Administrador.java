@@ -23,9 +23,9 @@ public class Administrador extends Atendente {
     public static void cadastrarAtendente(String nome, String cpf)
     {
         Atendente novo = new Atendente(nome,cpf);
-        System.out.println("antes de criar objeto");
+        System.out.println("dsp de criar objeto");
         Main.listaAtendentes.add(novo);
-        System.out.println("criou objeto");
+        System.out.println("add na lista");
         Main.listaVisitantes.forEach((_item) -> {
             System.out.println(Arrays.toString(Main.listaAtendentes.toArray()));
         });

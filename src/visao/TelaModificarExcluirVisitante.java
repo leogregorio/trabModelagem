@@ -121,7 +121,7 @@ public class TelaModificarExcluirVisitante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       TelaPaciente tela = new TelaPaciente();
+       TelaVisitante tela = new TelaVisitante();
        tela.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -134,6 +134,7 @@ public class TelaModificarExcluirVisitante extends javax.swing.JFrame {
             Visitante visitante = Atendente.pesquisarVisitanteNome(jComboBoxUsuarios.getSelectedItem().toString());
             TelaModificarVisitante tela = new TelaModificarVisitante(visitante);
             tela.setVisible(true);
+            this.dispose();
             
         }  
         else
@@ -150,6 +151,7 @@ public class TelaModificarExcluirVisitante extends javax.swing.JFrame {
             {
                jComboBoxUsuarios.addItem(str);
             }
+            this.dispose();
         }
             
     }//GEN-LAST:event_jButton3ActionPerformed

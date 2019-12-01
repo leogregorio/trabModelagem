@@ -26,4 +26,11 @@ public class Visitante extends Pessoa{
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+    
+    
+    
+    public String toString()
+    {
+        return this.nome;
+    }
 }

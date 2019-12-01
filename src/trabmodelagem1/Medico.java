@@ -9,10 +9,14 @@ package trabmodelagem1;
  *
  * @author Leonardo Gregório
  */
-public class Medico {
+public class Medico extends Pessoa {
     private String especialidade;
     private String crm;
     //private AgendaMedico agenda;
+
+    Medico(String nome, String cpf, String crm) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private void acessarProntuario(Paciente paciente)
     {
@@ -34,4 +38,6 @@ public class Medico {
     public void setCrm(String crm) {
         this.crm = crm;
     }
+
+
 }

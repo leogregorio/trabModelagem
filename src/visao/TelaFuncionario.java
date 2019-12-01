@@ -9,12 +9,12 @@ package visao;
  *
  * @author Leonardo Gregório
  */
-public class TelaPaciente extends javax.swing.JFrame {
+public class TelaFuncionario extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPaciente
      */
-    public TelaPaciente() {
+    public TelaFuncionario() {
         initComponents();
     }
 
@@ -27,11 +27,16 @@ public class TelaPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jButtonVoltar = new javax.swing.JButton();
         jButtonCadastrar = new javax.swing.JButton();
         jButtonPesquisar = new javax.swing.JButton();
-        jLabelOpcoesdepaciente = new javax.swing.JLabel();
+        jLabelOpcoesdefuncionario = new javax.swing.JLabel();
+        jRadioButtonAtendente = new javax.swing.JRadioButton();
+        jRadioButtonMedico = new javax.swing.JRadioButton();
+        jRadioButtonEnfermeiro = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,22 +47,34 @@ public class TelaPaciente extends javax.swing.JFrame {
             }
         });
 
-        jButtonCadastrar.setText("Cadastrar Paciente");
+        jButtonCadastrar.setText("Cadastrar Funcionario");
         jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
 
-        jButtonPesquisar.setText("Modificar ou Excluir Paciente");
+        jButtonPesquisar.setText("Modificar ou Excluir Funcionario");
         jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarActionPerformed(evt);
             }
         });
 
-        jLabelOpcoesdepaciente.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabelOpcoesdepaciente.setText("OPÇÕES DE PACIENTE");
+        jLabelOpcoesdefuncionario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabelOpcoesdefuncionario.setText("OPÇÕES DE FUNCIONÁRIO");
+
+        buttonGroup1.add(jRadioButtonAtendente);
+        jRadioButtonAtendente.setSelected(true);
+        jRadioButtonAtendente.setText("Atendente");
+
+        buttonGroup1.add(jRadioButtonMedico);
+        jRadioButtonMedico.setText("Médico");
+
+        buttonGroup1.add(jRadioButtonEnfermeiro);
+        jRadioButtonEnfermeiro.setText("Enfermeiro");
+
+        jLabel1.setText("Selecione o tipo de funcionário:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,11 +82,19 @@ public class TelaPaciente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
-                    .addComponent(jButtonVoltar)
-                    .addComponent(jLabelOpcoesdepaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jRadioButtonAtendente)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonMedico)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonEnfermeiro))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButtonCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
+                        .addComponent(jButtonVoltar)
+                        .addComponent(jLabelOpcoesdefuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -77,10 +102,17 @@ public class TelaPaciente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jButtonVoltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelOpcoesdepaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
+                .addComponent(jLabelOpcoesdefuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButtonAtendente)
+                    .addComponent(jRadioButtonMedico)
+                    .addComponent(jRadioButtonEnfermeiro))
+                .addGap(79, 79, 79)
                 .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jButtonPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(144, 144, 144))
         );
@@ -106,15 +138,31 @@ public class TelaPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        TelaCadastroPaciente tela = new TelaCadastroPaciente();
-        tela.setVisible(true);
-        this.dispose();
+
+        
+        if(jRadioButtonAtendente.isSelected())
+        {
+            TelaCadastroAtendente tela = new TelaCadastroAtendente();
+            tela.setVisible(true);
+            this.dispose();
+        }
+        else if(jRadioButtonEnfermeiro.isSelected())
+        {
+            TelaCadastroEnfermeiro tela = new TelaCadastroEnfermeiro();
+            tela.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaCadastroMedico tela = new TelaCadastroMedico();
+            tela.setVisible(true);
+            this.dispose();
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         TelaModificarExcluirPaciente tela = new TelaModificarExcluirPaciente();
-        System.out.println("AAAAA");
         tela.setVisible(true);
         this.dispose() ;
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
@@ -140,29 +188,35 @@ public class TelaPaciente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPaciente().setVisible(true);
+                new TelaFuncionario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonVoltar;
-    private javax.swing.JLabel jLabelOpcoesdepaciente;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelOpcoesdefuncionario;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButtonAtendente;
+    private javax.swing.JRadioButton jRadioButtonEnfermeiro;
+    private javax.swing.JRadioButton jRadioButtonMedico;
     // End of variables declaration//GEN-END:variables
 }

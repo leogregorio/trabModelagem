@@ -59,11 +59,12 @@ public class Atendente extends Funcionario{
     public static void cadastrarVisitante(String nome, String cpf, Paciente paciente)
     {
         Visitante novo = new Visitante(nome,cpf,paciente);
-        
-        //Main.listaVisitantes.add(novo);
-        
-        //for(int i=0; i < Main.listaVisitantes.size(); i++)
-        //    System.out.println(Arrays.toString(Main.listaVisitantes.toArray()));
+        System.out.println("antes de criar objeto");
+        Main.listaVisitantes.add(novo);
+        System.out.println("criou objeto");
+        Main.listaVisitantes.forEach((_item) -> {
+            System.out.println(Arrays.toString(Main.listaVisitantes.toArray()));
+        });
     }
     public static Visitante pesquisarVisitanteNome(String nome)
     {

@@ -11,6 +11,10 @@ package trabmodelagem1;
  */
 public class Enfermeiro {
     private String coren;
+
+    Enfermeiro(String nome, String cpf, String coren) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private boolean acessarHistorico(Paciente paciente)
     {

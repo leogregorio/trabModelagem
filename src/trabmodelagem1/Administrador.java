@@ -24,7 +24,7 @@ public class Administrador extends Atendente {
     {
         Atendente novo = new Atendente(nome,cpf);
         System.out.println("dsp de criar objeto");
-        Main.listaAtendentes.add(novo);
+            Main.listaAtendentes.add(novo);
         System.out.println("add na lista");
         Main.listaVisitantes.forEach((_item) -> {
             System.out.println(Arrays.toString(Main.listaAtendentes.toArray()));
@@ -39,11 +39,16 @@ public class Administrador extends Atendente {
         }
         return null;
     }
-    
-    
-    public static void cadastrarMedico(String nome, String cpf, String crm)
+    public static void deletarAtendente(Atendente atendente)
     {
-        Medico novo = new Medico(nome,cpf,crm);
+        Main.listaAtendentes.remove(atendente);
+        atendente = null;
+    }
+    
+    
+    public static void cadastrarMedico(String nome, String cpf, String crm, String especialidade)
+    {
+        Medico novo = new Medico(nome,cpf,crm,especialidade);
         System.out.println("antes de criar objeto");
         Main.listaMedicos.add(novo);
         System.out.println("criou objeto");
@@ -59,6 +64,11 @@ public class Administrador extends Atendente {
                 return Main.listaMedicos.get(i);
         }
         return null;
+    }
+    public static void deletarMedico(Medico medico)
+    {
+        Main.listaMedicos.remove(medico);
+        medico = null;
     }
     
     
@@ -80,6 +90,11 @@ public class Administrador extends Atendente {
                 return Main.listaEnfermeiros.get(i);
         }
         return null;
+    }
+    public static void deletarEnfermeiro(Enfermeiro enfermeiro)
+    {
+        Main.listaEnfermeiros.remove(enfermeiro);
+        enfermeiro = null;
     }
     
     

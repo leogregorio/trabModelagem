@@ -14,8 +14,11 @@ public class Medico extends Pessoa {
     private String crm;
     //private AgendaMedico agenda;
 
-    Medico(String nome, String cpf, String crm) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    Medico(String nome, String cpf, String crm, String especialidade) {
+        this.nome = nome;
+        this.crm = crm;
+        this.cpf = cpf;
+        this.especialidade = especialidade;
     }
     
     private void acessarProntuario(Paciente paciente)

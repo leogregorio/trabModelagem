@@ -162,9 +162,24 @@ public class TelaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
-        TelaModificarExcluirPaciente tela = new TelaModificarExcluirPaciente();
-        tela.setVisible(true);
-        this.dispose() ;
+        if(jRadioButtonAtendente.isSelected())
+        {
+            TelaModificarExcluirAtendente tela = new TelaModificarExcluirAtendente();
+            tela.setVisible(true);
+            this.dispose();
+        }
+        else if(jRadioButtonEnfermeiro.isSelected())
+        {
+            TelaCadastroEnfermeiro tela = new TelaCadastroEnfermeiro();
+            tela.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaModificarExcluirMedico tela = new TelaModificarExcluirMedico();
+            tela.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed

@@ -14,7 +14,8 @@ import java.util.Arrays;
 public class Atendente extends Funcionario{
 
     public Atendente(String nome, String cpf) {
-        super(nome, cpf);
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     
@@ -100,6 +101,9 @@ public class Atendente extends Funcionario{
         
     }
 
-
+    public String toString()
+    {
+        return this.nome;
+    }
 
 }

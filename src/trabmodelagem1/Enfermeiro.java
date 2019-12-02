@@ -9,11 +9,13 @@ package trabmodelagem1;
  *
  * @author Leonardo Gregório
  */
-public class Enfermeiro {
+public class Enfermeiro extends Pessoa {
     private String coren;
 
     Enfermeiro(String nome, String cpf, String coren) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.nome = nome;
+        this.cpf = cpf;
+        this.coren = coren;
     }
     
     private boolean acessarHistorico(Paciente paciente)

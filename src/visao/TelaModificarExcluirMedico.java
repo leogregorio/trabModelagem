@@ -140,7 +140,7 @@ public class TelaModificarExcluirMedico extends javax.swing.JFrame {
             jComboBoxUsuarios.removeAllItems();
             String[] m = new String[Main.listaMedicos.size()];
             for(int i = 0; i< Main.listaMedicos.size();i++)
-            m[i] = Main.listaMedicos.get(i).toString();
+            m[i] = Main.listaMedicos.get(i).getNome();
 
             for(String str: m)
             {

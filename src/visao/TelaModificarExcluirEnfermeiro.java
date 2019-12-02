@@ -7,6 +7,7 @@ package visao;
 
 import trabmodelagem1.Administrador;
 import trabmodelagem1.Atendente;
+import trabmodelagem1.Enfermeiro;
 import trabmodelagem1.Main;
 import trabmodelagem1.Medico;
 import trabmodelagem1.Paciente;
@@ -127,20 +128,20 @@ public class TelaModificarExcluirEnfermeiro extends javax.swing.JFrame {
         if(jRadioButtonMod.isSelected())
         {
             System.out.println("MODIFICAR");
-            Medico medico = Administrador.pesquisarMedicoNome(jComboBoxUsuarios.getSelectedItem().toString());
-            TelaModificarMedico tela = new TelaModificarMedico(medico);
+            Enfermeiro enfermeiro = Administrador.pesquisarEnfermeiroNome(jComboBoxUsuarios.getSelectedItem().toString());
+            TelaModificarEnfermeiro tela = new TelaModificarEnfermeiro(enfermeiro);
             tela.setVisible(true);
 
         }
         else
         {
             System.out.println("EXCLUIR");
-            Administrador.deletarMedico(Administrador.pesquisarMedicoNome(jComboBoxUsuarios.getSelectedItem().toString()));
+            Administrador.deletarEnfermeiro(Administrador.pesquisarEnfermeiroNome(jComboBoxUsuarios.getSelectedItem().toString()));
             //atualizar lista
             jComboBoxUsuarios.removeAllItems();
-            String[] m = new String[Main.listaMedicos.size()];
-            for(int i = 0; i< Main.listaMedicos.size();i++)
-            m[i] = Main.listaMedicos.get(i).toString();
+            String[] m = new String[Main.listaEnfermeiros.size()];
+            for(int i = 0; i< Main.listaEnfermeiros.size();i++)
+            m[i] = Main.listaEnfermeiros.get(i).getNome();
 
             for(String str: m)
             {

@@ -84,9 +84,9 @@ public class Administrador extends Atendente {
     }
     public static Enfermeiro pesquisarEnfermeiroNome(String nome)
     {
-        for(int i=0; i<Main.listaMedicos.size(); i++)
+        for(int i=0; i<Main.listaEnfermeiros.size(); i++)
         {
-            if(Main.listaMedicos.get(i).getNome().equals(nome))
+            if(Main.listaEnfermeiros.get(i).getNome().equals(nome))
                 return Main.listaEnfermeiros.get(i);
         }
         return null;

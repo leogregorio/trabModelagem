@@ -170,7 +170,7 @@ public class TelaFuncionario extends javax.swing.JFrame {
         }
         else if(jRadioButtonEnfermeiro.isSelected())
         {
-            TelaCadastroEnfermeiro tela = new TelaCadastroEnfermeiro();
+            TelaModificarExcluirEnfermeiro tela = new TelaModificarExcluirEnfermeiro();
             tela.setVisible(true);
             this.dispose();
         }

@@ -93,7 +93,7 @@ public class Administrador extends Atendente {
     }
     public static void deletarEnfermeiro(Enfermeiro enfermeiro)
     {
-        Main.listaEnfermeiros.remove(enfermeiro);
+        Main.listaEnfermeiros.remove(enfermeiro); 
         enfermeiro = null;
     }
     

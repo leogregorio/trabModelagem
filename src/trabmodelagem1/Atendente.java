@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class Atendente extends Funcionario{
 
     public Atendente(String nome, String cpf) {
-        this.nome = nome;
+        this.nome =   nome;
         this.cpf = cpf;
     }
 

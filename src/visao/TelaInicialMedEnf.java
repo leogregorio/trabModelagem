@@ -5,16 +5,20 @@
  */
 package visao;
 
+import trabmodelagem1.Atendente;
+import trabmodelagem1.Main;
+import trabmodelagem1.Paciente;
+
 /**
  *
  * @author Leonardo Gregório
  */
-public class TelaInicialAdministrador extends javax.swing.JFrame {
+public class TelaInicialMedEnf extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaInicialAtendente
      */
-    public TelaInicialAdministrador() {
+    public TelaInicialMedEnf() {
         initComponents();
     }
 
@@ -28,12 +32,10 @@ public class TelaInicialAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButtonVisualizar = new javax.swing.JButton();
+        jButtonEditar = new javax.swing.JButton();
+        jComboBoxUsuarios = new javax.swing.JComboBox<>();
+        jLabelselecione = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
@@ -47,63 +49,48 @@ public class TelaInicialAdministrador extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton2.setText("Funcionários");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVisualizar.setText("Visualizar dados do Paciente");
+        jButtonVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonVisualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
-        jButton2.setBounds(30, 110, 230, 80);
+        jPanel2.add(jButtonVisualizar);
+        jButtonVisualizar.setBounds(120, 180, 330, 90);
 
-        jLabel1.setText("Cadastros");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(30, 0, 130, 16);
-
-        jLabel2.setText("Quartos");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(30, 210, 60, 16);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton3.setText("Visitantes");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEditar.setText("Editar histórico do Paciente");
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonEditarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3);
-        jButton3.setBounds(270, 20, 230, 80);
+        jPanel2.add(jButtonEditar);
+        jButtonEditar.setBounds(120, 300, 330, 90);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton4.setText("Consultar Quartos");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton4);
-        jButton4.setBounds(30, 230, 230, 80);
+        String[] n = new String[Main.listaPacientes.size()];
+        for(int i = 0; i< Main.listaPacientes.size();i++)
+        n[i] = Main.listaPacientes.get(i).toString();
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton6.setText("Paciente");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton6);
-        jButton6.setBounds(30, 20, 230, 80);
+        for(String str: n)
+        {
+            jComboBoxUsuarios.addItem(str);
+        }
+        jPanel2.add(jComboBoxUsuarios);
+        jComboBoxUsuarios.setBounds(120, 110, 330, 26);
+
+        jLabelselecione.setText("Selecione o paciente:");
+        jPanel2.add(jLabelselecione);
+        jLabelselecione.setBounds(120, 90, 170, 16);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(20, 130, 560, 470);
+        jPanel2.setBounds(20, 70, 560, 470);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel4.setText("TELA PRINCIPAL");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(50, 30, 410, 40);
 
-        jLabel5.setText("ADMINISTRADOR");
+        jLabel5.setText("MÉDICO / ENFERMEIRO");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(50, 20, 130, 16);
 
@@ -135,39 +122,29 @@ public class TelaInicialAdministrador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaFuncionario telacp = new TelaFuncionario();
-        telacp.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        TelaVisitante tela = new TelaVisitante();
-        tela.setVisible(true);
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    TelaQuartos tela = new TelaQuartos();
-       tela.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
         this.dispose();
         TelaLogin tela = new TelaLogin();
         tela.setVisible(true);
     }//GEN-LAST:event_jButtonSairActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
-        TelaPaciente tela = new TelaPaciente();
-        tela.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         TelaLogin tela = new TelaLogin();
         tela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButtonVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVisualizarActionPerformed
+       Paciente paciente = Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString());
+       TelaVisualizarDados tela = new TelaVisualizarDados(paciente);
+       tela.setVisible(true);
+    }//GEN-LAST:event_jButtonVisualizarActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+       Paciente paciente = Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString());
+       TelaEditarHistorico tela = new TelaEditarHistorico(paciente);
+       tela.setVisible(true);
+    }//GEN-LAST:event_jButtonEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,37 +163,37 @@ public class TelaInicialAdministrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialMedEnf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialMedEnf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialMedEnf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaInicialAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicialMedEnf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicialAdministrador().setVisible(true);
+                new TelaInicialMedEnf().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButtonVisualizar;
+    private javax.swing.JComboBox<String> jComboBoxUsuarios;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelselecione;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

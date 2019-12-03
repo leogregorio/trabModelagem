@@ -5,6 +5,7 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
 import trabmodelagem1.Administrador;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
@@ -135,6 +136,7 @@ public class TelaModificarExcluirAtendente extends javax.swing.JFrame {
         {
             System.out.println("EXCLUIR");
             Administrador.deletarAtendente(Administrador.pesquisarAtendenteNome(jComboBoxUsuarios.getSelectedItem().toString()));
+            JOptionPane.showMessageDialog(null, "Deletado.");
             //atualizar lista
             jComboBoxUsuarios.removeAllItems();
             String[] m = new String[Main.listaAtendentes.size()];

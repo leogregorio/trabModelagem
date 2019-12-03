@@ -28,18 +28,15 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButtonSair = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastros = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -56,16 +53,6 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton1.setText("Agendar Visita");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(270, 170, 230, 80);
-
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton2.setText("Paciente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,11 +65,11 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
 
         jLabel1.setText("Cadastros");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(30, 10, 130, 15);
+        jLabel1.setBounds(30, 10, 130, 16);
 
         jLabel2.setText("Quartos");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(30, 150, 60, 15);
+        jLabel2.setBounds(30, 150, 60, 16);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton3.setText("Visitantes");
@@ -94,10 +81,6 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jPanel2.add(jButton3);
         jButton3.setBounds(270, 30, 230, 80);
 
-        jLabel3.setText("Consultas Médicas");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(30, 290, 110, 15);
-
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
         jButton4.setText("Consultar Quartos");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -108,18 +91,8 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         jPanel2.add(jButton4);
         jButton4.setBounds(30, 170, 230, 80);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadPacientes.png"))); // NOI18N
-        jButton5.setText("Agendar Consulta");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton5);
-        jButton5.setBounds(30, 320, 230, 80);
-
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(20, 100, 620, 440);
+        jPanel2.setBounds(20, 160, 620, 440);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel4.setText("TELA PRINCIPAL");
@@ -128,21 +101,20 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
 
         jLabel5.setText("ATENDENTE");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(50, 20, 80, 15);
-
-        jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
-        jButtonSair.setText("jButton6");
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonSair);
-        jButtonSair.setBounds(600, 10, 50, 40);
+        jLabel5.setBounds(50, 20, 80, 16);
 
         jLabel6.setText("Sair");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(610, 50, 34, 15);
+        jLabel6.setBounds(610, 50, 34, 16);
+
+        jButton6.setText("SAIR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(520, 10, 70, 60);
 
         jMenuCadastros.setText("Cadastros");
 
@@ -195,10 +167,6 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         TelaPaciente telacp = new TelaPaciente();
         telacp.setVisible(true);        // TODO add your handling code here:
@@ -210,18 +178,15 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       TelaQuartos tela = new TelaQuartos();
+       tela.setVisible(true); // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        this.dispose();
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         TelaLogin tela = new TelaLogin();
         tela.setVisible(true);
-    }//GEN-LAST:event_jButtonSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,15 +224,12 @@ public class TelaInicialAtendente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButtonSair;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

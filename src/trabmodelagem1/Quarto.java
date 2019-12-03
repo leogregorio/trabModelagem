@@ -12,15 +12,37 @@ import java.util.ArrayList;
  * @author Leonardo Gregório
  */
 public class Quarto {
-    private int numeroQuarto;
+    public int numeroQuarto;
     private int maxVisitas;
-    private Paciente paciente;
+    public Paciente paciente;
     private ArrayList visitas;
+    public String nomePaciente;
     
     
-    public Quarto()
+    Quarto(int numQuarto, String nome)
     {
+        numeroQuarto=numQuarto;
+        nomePaciente = nome;
         this.visitas = new ArrayList();
+    }
+
+   
+    
+    public void alteraQuarto(Paciente pacientes){
+        
+        if (pacientes!=null){
+            this.paciente=pacientes;
+        this.nomePaciente=paciente.getNome();
+        }
+        else 
+        {
+            paciente=null;
+            this.nomePaciente="0";
+        }
+        
+    }
+    public String nomePaciente (){
+        return nomePaciente;
     }
     private boolean quartoCheio()
     {

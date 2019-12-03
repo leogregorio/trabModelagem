@@ -5,6 +5,7 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
 import trabmodelagem1.Paciente;
@@ -184,7 +185,9 @@ import trabmodelagem1.Visitante;
        this.visitante.setNome(jTextFieldNome.getText());
        this.visitante.setCpf(jTextFieldCPF.getText());
        this.visitante.setPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
+       JOptionPane.showMessageDialog(null, "Salvo.");
        this.dispose();
+       
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed

@@ -88,14 +88,18 @@ public class Atendente extends Funcionario{
     {
         
     }
-    public static void reservarQuarto()
+    public static void reservarQuarto(int num, String nomeP)
     {
+        Quarto novo = new Quarto(num, nomeP);
+        System.out.println("antes de criar objeto");
+        Main.listaQuartos.add(novo);
+        System.out.println("criou objeto");
+        Main.listaVisitantes.forEach((_item) -> {
+            System.out.println(Arrays.toString(Main.listaQuartos.toArray()));
+        });
         
     }
-    public static void consultarAgendaMedico()
-    {
-        
-    }
+
     public static void consultarAgendaQuarto()
     {
         

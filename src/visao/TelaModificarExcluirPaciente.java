@@ -5,6 +5,7 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Main;
 import trabmodelagem1.Paciente;
@@ -135,6 +136,7 @@ public class TelaModificarExcluirPaciente extends javax.swing.JFrame {
             System.out.println("EXCLUIR");
             Atendente.deletarPaciente(Atendente.pesquisarPacienteNome(jComboBoxUsuarios.getSelectedItem().toString()));
             //atualizar lista
+            JOptionPane.showMessageDialog(null, "Deletado.");
             jComboBoxUsuarios.removeAllItems();
             String[] m = new String[Main.listaPacientes.size()];
             for(int i = 0; i< Main.listaPacientes.size();i++)

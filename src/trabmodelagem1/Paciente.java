@@ -16,6 +16,7 @@ public class Paciente extends Pessoa{
     }
     private int nivelDeUrgencia;
     private String planoDeSaude;
+    private String historico;
 
     public Paciente(String nome, String cpf, int nivelDeUrgencia,String planoDeSaude)
     {
@@ -44,5 +45,13 @@ public class Paciente extends Pessoa{
     public String toString()
     {
         return this.nome;
+    }
+
+    public String getHistorico() {
+        return historico;
+    }
+
+    public void setHistorico(String historico) {
+        this.historico = historico;
     }
 }

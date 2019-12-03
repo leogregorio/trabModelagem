@@ -5,6 +5,7 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
 import trabmodelagem1.Atendente;
 import trabmodelagem1.Medico;
 import trabmodelagem1.Paciente;
@@ -185,7 +186,7 @@ import trabmodelagem1.Paciente;
        this.medico.setCpf(jTextFieldCPF.getText());
        this.medico.setCrm(jTextFieldCRM.getText());
        this.medico.setEspecialidade(jTextFieldEspecialidade.getText());
-       
+       JOptionPane.showMessageDialog(null, "Salvo.");
        this.dispose();
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 

@@ -106,21 +106,28 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
-
+        String opcaoSelecionada = opcoesUser.getSelectedItem().toString();
         if(CampoUsuario.getText().equals("")){
-            if(opcoesUser.getSelectedItem().toString().equals("Atendente"))
+            if(opcaoSelecionada.equals("Atendente"))
               {
                  TelaInicialAtendente tela = new TelaInicialAtendente();
                  //TelaModificarExcluir2 tela = new TelaModificarExcluir2();
                  tela.setVisible(true);
                  this.dispose();
              }
-            else if(opcoesUser.getSelectedItem().toString().equals("Administrador"))
+            else if(opcaoSelecionada.equals("Administrador"))
             {
                 TelaInicialAdministrador tela = new TelaInicialAdministrador();
                 tela.setVisible(true);
                 this.dispose();
             }
+            else if(opcaoSelecionada.equals("Médico") || opcaoSelecionada.equals("Enfermeiro"))
+            {
+                TelaInicialMedEnf tela = new TelaInicialMedEnf();
+                tela.setVisible(true);
+                this.dispose();
+            }
+            
         }
         
        

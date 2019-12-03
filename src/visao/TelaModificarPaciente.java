@@ -5,7 +5,7 @@
  */
 package visao;
 
-import trabmodelagem1.Atendente;
+import javax.swing.JOptionPane;
 import trabmodelagem1.Paciente;
 
 /**
@@ -43,7 +43,6 @@ import trabmodelagem1.Paciente;
         jComboBoxPlano = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        BOTA = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,7 +105,7 @@ import trabmodelagem1.Paciente;
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelCPF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                            .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,30 +158,17 @@ import trabmodelagem1.Paciente;
                 .addGap(63, 63, 63))
         );
 
-        BOTA.setText("BOTA");
-        BOTA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BOTAActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(BOTA)
-                .addGap(43, 43, 43)
+                .addGap(125, 125, 125)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(BOTA, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(127, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,6 +186,7 @@ import trabmodelagem1.Paciente;
        this.paciente.setCpf(jTextFieldCPF.getText());
        this.paciente.setNivelDeUrgencia(jComboBox1.getSelectedIndex());
        this.paciente.setPlanoDeSaude(jComboBoxPlano.getSelectedItem().toString());
+       JOptionPane.showMessageDialog(null, "Salvo.");
        this.dispose();
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -207,13 +194,6 @@ import trabmodelagem1.Paciente;
         this.dispose();
         
     }//GEN-LAST:event_jButtonVoltarActionPerformed
-
-    private void BOTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAActionPerformed
-        jTextFieldNome.setText(this.paciente.getNome());
-        jTextFieldCPF.setText(this.paciente.getCpf());
-        
-      
-    }//GEN-LAST:event_BOTAActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -264,7 +244,6 @@ import trabmodelagem1.Paciente;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BOTA;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonVoltar;
     private javax.swing.JComboBox<String> jComboBox1;

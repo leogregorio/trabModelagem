@@ -12,7 +12,7 @@ package trabmodelagem1;
 public class Pessoa {
     protected String nome;
     protected String cpf;
-    protected String codigo;
+    protected String codigo; 
 
     public String getNome() {
         return nome;

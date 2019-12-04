@@ -100,11 +100,6 @@ public class Atendente extends Funcionario{
         
     }
 
-    public static void consultarAgendaQuarto()
-    {
-        
-    }
-
     public String toString()
     {
         return this.nome;

@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author Leonardo Gregório
  */
-public class Administrador extends Atendente {
+public class Administrador extends Atendente { 
  
     
     
